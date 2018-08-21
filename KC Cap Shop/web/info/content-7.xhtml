@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <head> 
+		<title>content-7</title>
+		<link rel="stylesheet" type="text/css" href="/resources/css/mystyle.css"/>
+    </head>
+    <body>
+        <ui:composition>
+	    <h:form>
+		<div class="menu3">
+                    <h:button outcome="/index" value="Back to Shopping" style="width: 150px; height: 25px; font-family: cursive;"/>
+		</div>
+                <h:dataTable value="#{bb.history}" var="oh" rules="rows" columnClasses="hc1,hc2" width="100%">
+                    <h:column>
+			<h:panelGrid columns="1">
+			    <h:panelGroup >
+				<h:outputText value="Order date: "/>
+				<h:outputText value="#{oh.orderDate}">
+				    <f:convertDateTime pattern="MM/dd/YYYY" />
+				</h:outputText>
+			    </h:panelGroup>
+                             <h:panelGroup >
+				<h:outputText value="User name: "/>
+                                <h:outputText value="#{oh.customer.id}"/>
+			    </h:panelGroup>
+			    <h:panelGroup>
+				<h:outputText value="Addressee: "/>
+				<h:outputText value="#{oh.form_name}"/>
+			    </h:panelGroup>
+			    <h:panelGroup>
+				<h:outputText value="Total price: "/>
+                                <h:outputText value="#{oh.totalPrice}" style="color: red;">
+				    <f:convertNumber type="currency" locale="en_US"/>
+				</h:outputText>
+			    </h:panelGroup>
+			</h:panelGrid>
+		    </h:column>
+                    
+                    <h:column>
+                        <h:dataTable value="#{oh.orderLine}" var="odr" columnClasses="hcc1, hcc2, hcc3, hcc4" >
+			    <h:column>
+				<p:graphicImage value="#{bb.picS}" >
+                                    <f:param name="productId" value="#{odr.product.id}"/>
+				</p:graphicImage>				
+			    </h:column>
+			    <h:column>
+				<h:outputText value="#{odr.product.name}"/>
+			    </h:column>
+			    <h:column>
+				Price:
+				<h:outputText value="#{odr.product.price}">
+				    <f:convertNumber type="currency" locale="en_US"/>
+				</h:outputText>
+			    </h:column>
+			    <h:column>
+				Quantity:
+				<h:outputText value="#{odr.quantity}"/>
+			    </h:column>			
+			</h:dataTable>
+		    </h:column>
+                    
+                </h:dataTable>
+	    </h:form>
+	</ui:composition>
+    </body>
+</html>

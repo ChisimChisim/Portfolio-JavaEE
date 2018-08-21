@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <head> 
+		<title>content-3</title>
+		<link rel="stylesheet" type="text/css" href="/resources/css/mystyle.css"/>
+    </head>
+    <body>
+        <ui:composition>
+            <h:form>
+                <p:growl showDetail="false" life="3000"/>
+                
+                <h:panelGrid columns="2" styleClass="menu2" columnClasses="cart_c1,cart_c2">
+                    <h:commandButton value="Proceed to Checkout" action="#{bb.gotoOrderForm()}" styleClass="btn"/>
+                    <h:button outcome="index" value="Back to Shopping" styleClass="btn"/>
+		</h:panelGrid>
+                
+                <h:dataTable value="#{bb.cart}" var="odr" rowClasses="r1,r2" columnClasses="c1,c2,c3" >
+		    <h:column >
+			<p:graphicImage value="#{bb.picS}" >
+			    <f:param name="productId" value="#{odr.product.id}"/>
+			</p:graphicImage>
+		    </h:column>
+		    <h:column>
+			<h:outputText value="#{odr.product.name}" styleClass="item"/>
+			<h:outputText  value="#{odr.product.text}" styleClass="tx"/>
+			<h:commandLink action="#{bb.delete(odr)}" styleClass="del">
+			    Delete
+			</h:commandLink>
+		    </h:column>
+		    <h:column >
+			<h:outputText id="disp" value="#{odr.product.price*odr.quantity}" styleClass="q_inp">
+			    <f:convertNumber type="currency" locale="en_US"/>
+			</h:outputText>
+                        <h:selectOneMenu value="#{odr.quantity}" styleClass="quantity">
+                            <f:selectItems value="#{bb.qtys}" />
+                            <f:ajax event="change" render="disp" />
+                        </h:selectOneMenu>	
+		    </h:column>		    
+		</h:dataTable>
+            </h:form>
+        </ui:composition>
+    </body>
+</html>

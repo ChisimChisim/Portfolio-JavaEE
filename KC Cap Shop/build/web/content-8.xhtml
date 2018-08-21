@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <head>
+	<title>content-6</title>
+	<link rel="stylesheet" type="text/css" href="/resources/css/mystyle.css"/>
+    </head>
+    <body>
+	<ui:composition>
+             
+            <h:form>
+	    <div style="text-align: right;margin-bottom: 10px;">
+                <h:button outcome="index" value="Back to shopping" styleClass="btn2"/>
+	    </div>	
+
+	    <h:panelGrid columns="3" styleClass="loginFrame" headerClass="loginHeader" columnClasses="lc1, lc2, lc3" rowClasses="lrow" cellspacing="0" border="0" rules="">
+		<f:facet name="header">  
+		    <h:outputText value="Create account"  />
+		</f:facet>  
+                
+		<h:outputLabel for="username" value="User name*" /> 
+                <h:inputText id="username" value="#{bb.new_id}" size="15" styleClass="loginInput" required="true">
+                    <f:ajax event="blur" execute="@this" render="messageId"/>
+                </h:inputText>
+                <h:message id="messageId" for="username" />
+                
+		<h:outputLabel for="password" value="Password*" />
+                <h:inputSecret id="password" value="#{bb.new_passwd}" size="15" styleClass="loginInput" required="true">
+                   <f:ajax event="blur" execute="@this" render="messagePwd"/>
+                </h:inputSecret>
+                <h:message id="messagePwd" for="password" />   
+                
+                <h:outputLabel for="yourName" value="Your name*" />
+                <h:inputText id="yourName" value="#{bb.new_name}" size="15" styleClass="loginInput" required="true">
+                   <f:ajax event="blur" execute="@this" render="messageName"/>
+                </h:inputText>
+                <h:message id="messageName" for="yourName" />   
+                
+                <h:outputLabel for="mail" value="Email*" />
+                <h:inputText id="mail" value="#{bb.new_mail}" size="15" styleClass="loginInput" required="true">
+                   <f:ajax event="blur" execute="@this" render="messageMail"/>
+                </h:inputText>
+                <h:message id="messageMail" for="mail" />   
+                
+		<f:facet name="footer">  
+                    <h:commandButton value="Resister" action="#{bb.createCustomer()}" styleClass="loginBtn" >
+                        <f:ajax execute="@all" render="messageId messagePwd messageMail messageName exist"/>
+                    </h:commandButton>
+                    <p:growl id="exist" for="register" showDetail="false" life="3000" />
+                   
+		</f:facet> 
+                
+	    </h:panelGrid>
+	    </h:form>
+	</ui:composition>
+    </body>
+</html>

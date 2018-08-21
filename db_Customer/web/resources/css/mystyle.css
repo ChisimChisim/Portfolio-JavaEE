@@ -1,0 +1,11 @@
+body {
+    font-family: メイリオ ,Osaka;	/* 全体のフォント */
+    font-size: 12pt;				/* 全体の文字サイズ */
+    margin: 20px 10px 10px 20px;	/* 上右下左の順でマージンを指定 */
+    line-height: 1.6em;
+}
+h1 {
+    font-size: 1.2em;			/* 文字サイズ */
+    border-bottom: solid 1px #999;	/* ボーダーライン（下） */
+
+}

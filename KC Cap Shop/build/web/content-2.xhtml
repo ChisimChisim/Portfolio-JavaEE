@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <head> 
+		<title>content-2</title>
+		<link rel="stylesheet" type="text/css" href="/resources/css/mystyle.css"/>
+    </head>
+    <body>
+        <ui:composition>
+            <h:form>
+                <div id="pic">
+                    <p:graphicImage value="#{bb.picL}" >
+                        <f:param name="productId" value="#{bb.sel.id}" />
+                    </p:graphicImage>
+                </div>
+                <div id="exp">
+                    <div id="bklink">
+                        <h:button outcome="index" value="Back to item list" styleClass="btn2"/>
+                    </div>
+                     <h:outputText value="#{bb.sel.name}" styleClass="name" />
+                     <h:outputText value="#{bb.sel.price}" styleClass="price" >
+                         <f:convertNumber type="currency" locale="en_US" />
+                     </h:outputText>
+                     <h:outputText value="#{bb.sel.text}" styleClass="text" />
+                     <div id="cart">
+                         <h:commandButton value="Go to cart" action="#{bb.addToCart()}" styleClass="btn"/>
+		    </div>
+                </div>
+            </h:form>
+        </ui:composition>
+    </body>
+</html>

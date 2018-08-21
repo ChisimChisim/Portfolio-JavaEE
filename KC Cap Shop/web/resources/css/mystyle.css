@@ -1,0 +1,329 @@
+body {
+    font-family: cursive;	        /* font */
+    font-size: 10pt;		        /* font size */
+    margin: 20px 10px 10px 20px;	/* margin */
+    line-height: 1.6em;
+}
+h1 {
+    font-size: 1.2em;				/* font size */
+    border-bottom: solid 1px #999;	/* border line (bottom)*/
+    text-align: center;				/* center content */
+
+}
+.error{
+    font-size: 0.7em;	/* error ;message font size */		
+}
+
+/**************************** 
+    CSS for footer
+******************************/
+
+address{
+    font-style: normal;				
+    font-size: 1.0em;				
+    text-align: center;	
+    border-top: solid 1px #999;		
+    clear:both;
+}	
+
+/* *****************************
+    CSS for content-1
+*********************************/
+#view{
+    height: 900px;
+}
+.un {
+    float: left;
+    font-weight: bold;
+}
+
+.sel {		
+    font-family: cursive;
+    padding-left: 30px;
+    font-size: 1.0em;
+}
+.menu0{
+    margin-bottom: 10px;
+    float: right;
+    //text-align: right;
+}
+.btn1{
+    font-weight: bold; 
+    font-family:cursive; 
+    width: 150px; 
+    height: 25px;
+    margin-right: 10px;
+}
+
+.menu1{
+    clear: both;
+    height: 50px;
+    border: solid 1px #999999;
+    margin-bottom: 20px;
+}
+
+.page{
+    margin-left: 15px;
+}
+
+.r1 {/* row1 */
+    background-color: #dbe9f9;	/* light blue */
+}
+.r2 {/* row2 */
+    background-color: #fde6e6;	/* light pink */
+}
+.c1	{
+    width: 200px;				
+    padding: 10px;				
+    vertical-align: top;
+    text-align: center;
+}
+.c2	{
+    vertical-align: top;
+    padding: 10px;
+}
+
+.c3	{
+    width: 130px;	
+    padding: 10px;
+    vertical-align: top;
+    text-align: center;
+}
+.product{
+    font-size: 1.2em;
+}
+.tx{
+    display: block;
+    padding-left: 50px;
+}
+.mgn{
+    margin-right:5px;
+}
+/* *****************************
+    CSS for content-2
+*********************************/
+#pic {
+    float: left;
+    margin-right: 20px;
+}
+
+.btn2{
+    font-family:cursive; 
+    width: 150px; 
+    height: 25px;
+    margin-right: 10px;
+}
+#bklink{
+    text-align: right;
+    margin-bottom: 20px;
+
+}
+.name{
+    //display: box;
+    font-size: 1.5em;
+}
+.price{
+    display: block;
+    padding-top:10px;
+    font-size: 1.5em;
+    color:  #ff0066;
+}
+.text{
+    display:  block;
+    padding-top: 15px;
+}
+#cart{
+    margin-top: 100px;
+    text-align: center;
+}
+/* *****************************
+    CSS for content-3
+*********************************/
+.del{
+    display: block;
+    padding:15px;
+ }  
+ .item{
+     font-size: 1.2em;
+ }
+.menu2{
+    height: 30px;
+    border: solid 1px #999999;
+    margin-bottom: 20px;
+    padding-top:3px;
+    padding-bottom:10px;
+    padding-right: 10px;
+    text-align: right;
+    width:100%;
+}
+.cart_c1{
+    width: 640px;
+}
+.cart_c2{
+    width: 260px;
+    padding-right: 10px;
+}
+.msg{
+    font-size: 1.5em;
+    color:blue;
+}
+.quantity{
+    color: #666666;
+    margin-left: 10px;
+    padding-left: 30px;
+    font-family: cursive;
+    font-size: 1.2em;
+}
+.q_inp{
+    color:#ff0066;
+    font-size: 1.5em;
+}
+
+/* *****************************
+    CSS for content-4
+*********************************/   
+.menu4{
+    text-align: right;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    margin-top: 0px;
+}
+.cusform{
+    margin-left:50px;
+}
+.hdr{
+    font-size: 2.0em;
+    padding-bottom: 20px;
+}
+.ft{
+    font-size: 1.2em;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.inp{
+    padding: 3px;
+    font-size: 1.2em;
+    font-family: inherit;
+}
+.btn{
+    margin-top: 10px;
+    width:250px;
+    height:30px;
+    font-size: 1.1em;
+    font-family: cursive;
+}
+.c10 {
+	width:150px;					
+	vertical-align: central;
+	text-align: center;
+	border-right:solid 1px #999999;
+        font-size: 1.2em;
+}
+.c20 {	
+	width:600px;
+	padding:5px 3px 3px 10px;
+	vertical-align: top;
+}
+.c30 {
+	width:100px;
+	padding:5px 3px 3px 10px;
+	vertical-align: top;
+        background-color: white;
+}
+
+.row_odd{background-color: #e1effc;}			
+.row_even{background-color: #f0f0f0;}			
+
+/* *****************************
+   CSS for Sign in (content-6)
+*********************************/
+.loginFrame{
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+.lc1{
+    font-size: 1.2em;
+    width: 100px;
+    text-align: center;
+    padding-right: 5px;
+}
+.lc2{
+    font-size: 1.2em;
+    width: 80px;
+    text-align: center;
+    padding-right: 5px;
+}
+.lc3{
+    font-size: 1.2em;
+    width: 60px;
+    text-align: left;
+    padding-right: 5px;
+    color: red;
+}
+.loginBtn{
+    margin-top: 20px;
+    margin-left: 80px;
+    width:250px;
+    height:30px;
+    font-size: 1.3em;
+    font-family: cursive;
+
+}
+.newCst{
+    font-size:1.1em;
+    margin-left: 5px;
+}
+.lrow{
+    height:40px;
+}
+.loginInput {
+    font-size: 1.3em;
+    padding: 3px 5px;
+    background-color:  #d6eaff;
+}
+.loginHeader{
+    font-size: 1.8em;
+    padding-bottom: 20px;
+}
+/* *****************************
+   CSS for content-7
+*********************************/
+.menu3{
+    text-align: right;
+    margin-bottom: 10px; 
+    margin-top: 0px;
+    background-color: #e0e0e0;
+    padding: 5px 20px 5px 5px;
+   
+}
+.hc1{
+    padding: 10px 5px;
+    width: 160px;
+    vertical-align: top;
+}
+.hc2{
+    padding: 5px;
+    
+}
+.hcc1{
+    width: 150px;
+}
+.hcc2{
+    padding-left: 10px;
+    vertical-align: top;
+    width: 200px;
+}
+.hcc3{
+    vertical-align: top;
+    width: 150px;
+}
+.hcc4{
+    vertical-align: top;
+}
+.historyMsg{
+    font-size: 1.2em;
+    color: #444444;
+}

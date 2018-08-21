@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <head> 
+		<title>content-4</title>
+		<link rel="stylesheet" type="text/css" href="/resources/css/mystyle.css"/>
+    </head>
+    <body>
+        <ui:composition>
+            <h:form>
+              <div Class="menu4">
+		      <h:button outcome="cart" value="Back to cart" styleClass="btn2"/>
+              </div>
+                <h:panelGrid columns="3" styleClass="grid" columnClasses="c10,c20,c30" cellspacing="2" cellpadding="2" rowClasses="row_odd, row_even" headerClass="hdr" footerClass="ft">
+		    <f:facet name="header">
+			Customer Information
+		    </f:facet>
+                     Name
+		    <h:inputText id="name" value="#{bb.c_name}" size="30" required="true" styleClass="inp">
+			<f:ajax event="blur" render="name_msg"/>
+		    </h:inputText>
+		    <h:message id="name_msg" for="name"  styleClass="error"/>
+		    Address
+		    <h:inputText id="address" value="#{bb.c_address}" size="30"  required="true" styleClass="inp">
+			<f:ajax event="blur" render="address_msg"/>
+		    </h:inputText>			
+		    <h:message id="address_msg" for="address" styleClass="error"/>
+		    Mail address
+		    <h:inputText id="mail" value="#{bb.c_mail}" size="30" required="true" styleClass="inp">
+			<f:ajax event="blur" render="mail_msg"/>
+		    </h:inputText>			
+		    <h:message id="mail_msg" for="mail" styleClass="error"/>
+		    Message
+		    <h:inputTextarea id="msg" value="#{bb.c_msg}" cols="35" rows="5" styleClass="inp"/>
+                    <h:message id="msg_msg" for="msg" styleClass="error"/>
+		    <f:facet name="footer">
+			<h:commandButton action="#{bb.buy()}" value="Order" styleClass="btn"/>
+		    </f:facet>
+		</h:panelGrid>
+            </h:form>
+        </ui:composition>
+    </body>
+</html>
